@@ -79,12 +79,14 @@ public class Factura {
                 .append(this.cliente.getNif())
                 .append("\nDescripcion: ")
                 .append(this.descripcion)
+                .append("\n");
+        SimpleDateFormat df = new SimpleDateFormat("dd 'de' MMMM, yyyy");
+        sb.append("Fecha emisión: ")
+                .append(df.format(this.fecha))
                 .append("\n")
                 .append("\n#\tNombre\t$\tCant.\tTotal\n");
 
 
-        SimpleDateFormat df = new SimpleDateFormat("dd 'de' MMMM, yyyy");
-        sb.append("Fecha emisión: ").append(df.format(this.fecha)).append("\n");
         for (ItemFactura item: this.items){
             if (item == null){
                 continue;
