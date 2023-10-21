@@ -24,4 +24,10 @@ public class ItemFactura {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
+
+    public float calcularImporte(){
+        return this.cantidad * this.producto.getPrecio();
+    }
+
+
 }
